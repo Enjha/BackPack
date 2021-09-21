@@ -29,13 +29,15 @@ public class Bag {
         this.contents = contents;
     }
 
-    public void initiateValue(String filename){
+    public ArrayList<Item> initiateValue(String filename){
         BufferedReader br = null;
+        ArrayList<Item> listItems = new ArrayList<>();
         try {
             String sCurrentLine;
             br = new BufferedReader(new FileReader(filename));
+            this.setWeihgtLimit(Integer.parseInt(br.readLine()));
             while ((sCurrentLine = br.readLine()) != null) {
-                System.out.println(sCurrentLine);
+                listItems.add(new Item(Integer.parseInt(sCurrentLine.split(" ")[0]),Integer.parseInt(sCurrentLine.split(" ")[1]), false));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -46,5 +48,6 @@ public class Bag {
                 ex.printStackTrace();
             }
         }
+        return listItems;
     }
 }
