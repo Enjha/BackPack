@@ -7,8 +7,8 @@ public class AlgoOpti {
     private int bestValue;
 
 
-    public AlgoOpti(String filename, Bag o){
-        this.listItems = o.initiateValue("bags/"+filename);
+    public AlgoOpti(String filename, Bag o) {
+        this.listItems = o.initiateValue("bags/sac" + filename + ".txt");
         listItems.sort(new CompareByRating());
         this.bestValue = 0;
         this.o = o;

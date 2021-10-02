@@ -6,10 +6,8 @@ import java.util.ArrayList;
 public class Bag {
 
     private int weihgtLimit;
-    private ArrayList<Item> contents;
 
     public Bag() {
-        this.contents = new ArrayList<>();
         this.weihgtLimit = 0;
     }
 
@@ -19,14 +17,6 @@ public class Bag {
 
     public void setWeihgtLimit(int weihgtLimit) {
         this.weihgtLimit = weihgtLimit;
-    }
-
-    public ArrayList<Item> getContents() {
-        return contents;
-    }
-
-    public void setContents(ArrayList<Item> contents) {
-        this.contents = contents;
     }
 
     public ArrayList<Item> initiateValue(String filename){
