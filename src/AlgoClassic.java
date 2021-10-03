@@ -18,7 +18,6 @@ public class AlgoClassic {
                 o.setWeihgtLimit(o.getWeihgtLimit()-i.getWeight());
                 weightStealerBag += i.getWeight();
                 stealedValue += i.getValue();
-                i.setStealed(true);
                 System.out.println("L'item n°"+listItems.indexOf(i)+" qui a pour poid: "+i.getWeight()
                         +" ,et pour valeur: "+i.getValue()+" a été volé !");
             }

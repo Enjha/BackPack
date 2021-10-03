@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -10,12 +9,8 @@ public class Main {
         String filename = scan.next();
         scan.close();
         final Bag o = new Bag();
-        ArrayList<Item> test = o.initiateValue("bags/sac"+filename+".txt");
-        for(Item i : test){
-            float ratio = i.getValue()/i.getWeight();
-            System.out.println(ratio);
-        }
-        //System.out.println("La valeur totale des objets volés est de: "+ new AlgoOpti(filename, o).findOpti(o.getWeihgtLimit(),0,0));
+        o.initiateValue("bags/sac"+filename+".txt");
+        System.out.println("La valeur totale des objets volés est de: "+ new AlgoOpti(filename, o).findOpti(o.getWeihgtLimit(),0,0));
         /* // ALGO CLASSIQUE
         new AlgoClassic().start(filename);
          */

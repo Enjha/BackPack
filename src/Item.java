@@ -1,24 +1,19 @@
 public class Item {
 
-    private int weight;
-    private int value;
-    private boolean stealed;
+    private double weight;
+    private double value;
 
-    public Item(int weight, int value, boolean stealed) {
+    public Item(double weight, double value) {
         this.weight = weight;
         this.value = value;
-        this.stealed = false;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 
-    public void setStealed(boolean stealed) {
-        this.stealed = stealed;
-    }
 }

@@ -9,14 +9,13 @@ public class AlgoOpti {
 
     public AlgoOpti(String filename, Bag o) {
         this.listItems = o.initiateValue("bags/sac" + filename + ".txt");
-        listItems.sort(new CompareByRating());
         this.bestValue = 0;
         this.o = o;
     }
 
-    public int greedy(){
-        int capacity = o.getWeihgtLimit();
-        int value = 0;
+    public double greedy(){
+        double capacity = o.getWeihgtLimit();
+        double value = 0;
         int i = 0;
         while(capacity>=listItems.get(i).getWeight()){
             capacity -= listItems.get(i).getWeight();
@@ -26,13 +25,13 @@ public class AlgoOpti {
         return value + ( (listItems.get(i).getValue() * capacity) / listItems.get(i).getWeight() );
     }
 
-    public int findOpti(int capacity, int currentValue, int index){
+    public int findOpti(double capacity, double currentValue, int index){
         if(capacity < 0 || index == listItems.size() - 1) return 0;
         if(bestValue < currentValue){
-            bestValue = currentValue;
+            bestValue = (int) currentValue;
             return 0;
         }
-        int greedy = greedy();
+        double greedy = greedy();
         if(bestValue >= greedy) return 0;
         findOpti(capacity,currentValue,index+1);
         findOpti(capacity-(listItems.get(index).getWeight()),currentValue+(listItems.get(index).getValue()),index+1);
