@@ -10,7 +10,11 @@ public class Main {
         scan.close();
         final Bag o = new Bag();
         o.initiateValue("bags/sac"+filename+".txt");
+        long timeStart = System.currentTimeMillis();
         System.out.println("La valeur totale des objets volés est de: "+ new AlgoOpti(filename, o).findOpti(o.getWeihgtLimit(),0,0));
+        long time = System.currentTimeMillis() - timeStart;
+
+        System.out.println("En : "+ (double) time / 1000 +" secondes.");
         /* // ALGO CLASSIQUE
         new AlgoClassic().start(filename);
          */

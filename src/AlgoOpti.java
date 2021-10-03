@@ -13,9 +13,7 @@ public class AlgoOpti {
         this.o = o;
     }
 
-    public double greedy(){
-        double capacity = o.getWeihgtLimit();
-        double value = 0;
+    public double greedy(double capacity, double value){
         int i = 0;
         while(capacity>=listItems.get(i).getWeight()){
             capacity -= listItems.get(i).getWeight();
@@ -31,8 +29,7 @@ public class AlgoOpti {
             bestValue = (int) currentValue;
             return 0;
         }
-        double greedy = greedy();
-        if(bestValue >= greedy) return 0;
+        if(bestValue >= greedy(capacity,currentValue)) return 0;
         findOpti(capacity,currentValue,index+1);
         findOpti(capacity-(listItems.get(index).getWeight()),currentValue+(listItems.get(index).getValue()),index+1);
         return bestValue;
